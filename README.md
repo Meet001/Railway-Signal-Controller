@@ -13,6 +13,7 @@
 	we are implementing the optional part,as our uart communication.
 	2 modules uart_rx and uart_tx are provided as a part of vhdl files to achieve the same along with a python code rxtx.py which should run on a relay laptop to prevent issues of the low signal strength(i.e to boost the signal).
 	certain extra things to take care of,( all in relay laptop )
+		
 		1) to first run xr_usb_serial_common
 		steps :- go in folder
 		          make ( in terminal )
@@ -26,6 +27,7 @@
 		
 	testing methods :-
 		first run sudo python3 rxtx.py to enable relay
+		
 		1) with another signal controller :- 
 			this will need 3 laptop 4 USB cables and 2 boards.
 		setup:-	2 laptops connected to prog port of the 2 board(both running as signal controller with main.c(backend comupter)),and UART port of both board connected to the third laptop(running rxtx.py)
@@ -35,8 +37,7 @@
 			
 			to receive(timeout based) :- and in S5 it will check while the current event of desplaying was happening , did he receive any data from other controller,if yes it will save that data in his memory as a signal vector(used while desplaying led in S2) or if no it will wait for 8 seconds to see if any data arrived, if not it will time out and move to S6.
   
-				 
-			
+				 	
 
 		2) with another board just running uart receiver or transmitter code.to deplay received entries(receiver code) and send some data(transmitter code) ).
 			provided two bit files(uart_tx.bit and uart_rx.bit) in vhdl extras folder to program of second board(other than signal controller)
